@@ -1,0 +1,29 @@
+{
+  "capacity": 5000,
+  "budget": null,
+  "goods": {
+    "rum": { "weight": 8 },
+    "sugar": { "weight": 3 },
+    "cannons": { "weight": 120 },
+    "silk": { "weight": 2 },
+    "timber": { "weight": 60 }
+  },
+  "locations": {
+    "Tortuga": {
+      "rum": { "buy": 12, "available": 300 },
+      "sugar": { "buy": 5, "available": 800 },
+      "cannons": { "buy": 240, "available": 20 },
+      "silk": { "buy": 30, "available": 150 },
+      "timber": { "buy": 18, "available": 400 }
+    },
+    "Nassau": {
+      "rum": { "sell": 34 },
+      "sugar": { "sell": 9 },
+      "cannons": { "sell": 520 },
+      "silk": { "sell": 41 },
+      "timber": { "sell": 22 }
+    }
+  },
+  "departure": "Tortuga",
+  "arrival": "Nassau"
+}

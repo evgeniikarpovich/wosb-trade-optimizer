@@ -1,6 +1,8 @@
 node_modules
 dist
+dist-web
 coverage
 *.log
 .DS_Store
 .vitest
+THIRD-PARTY-LICENSES.json

@@ -1,0 +1,79 @@
+{
+  "_comment": "Default template. All 20 goods exist at every port; weights are known only where measured, and per-port price/stock default to 0 (unknown) unless listed under a location's `cells`. Each port has one market price per good (buy at departure, sell at arrival). From sample.txt: Порт 1 uses the buy prices + stock, Порт 2 the sell prices — so the default route Порт 1 -> Порт 2 is profitable.",
+  "capacity": 5000,
+  "budget": null,
+  "goods": [
+    { "name": "Сахар", "weight": 20 },
+    { "name": "Паприка", "weight": 9 },
+    { "name": "Шелк", "weight": 20 },
+    { "name": "Манго", "weight": 4 },
+    { "name": "Кожа", "weight": 5 },
+    { "name": "Орехи", "weight": 5 },
+    { "name": "Масло", "weight": 3 },
+    { "name": "Пиво", "weight": 6 },
+    { "name": "Корица", "weight": 7 },
+    { "name": "Ковры", "weight": 6 },
+    { "name": "Табак", "weight": 14 },
+    { "name": "Перец", "weight": 6 },
+    { "name": "Вино", "weight": 3 },
+    { "name": "Грог", "weight": 5 },
+    { "name": "Шафран", "weight": 15 },
+    { "name": "Соль", "weight": 5 },
+    { "name": "Финики", "weight": 6 },
+    { "name": "Кофе", "weight": 12 },
+    { "name": "Ваниль", "weight": 7 },
+    { "name": "Ананасы", "weight": 4 }
+  ],
+  "locations": [
+    {
+      "name": "Южный Бастион",
+      "cells": {
+        "Сахар": { "price": 30, "available": 200 },
+        "Паприка": { "price": 0, "available": 0 },
+        "Шелк": { "price": 0, "available": 0 },
+        "Манго": { "price": 0, "available": 0 },
+        "Кожа": { "price": 20, "available": 300 },
+        "Орехи": { "price": 0, "available": 0 },
+        "Масло": { "price": 13, "available": 400 },
+        "Пиво": { "price": 0, "available": 0 },
+        "Корица": { "price": 0, "available": 0 },
+        "Ковры": { "price": 0, "available": 0 },
+        "Табак": { "price": 32, "available": 200 },
+        "Перец": { "price": 0, "available": 0 },
+        "Вино": { "price": 0, "available": 0 },
+        "Грог": { "price": 0, "available": 0 },
+        "Шафран": { "price": 0, "available": 0 },
+        "Соль": { "price": 0, "available": 0 },
+        "Финики": { "price": 0, "available": 0 },
+        "Кофе": { "price": 0, "available": 0 },
+        "Ваниль": { "price": 0, "available": 0 },
+        "Ананасы": { "price": 0, "available": 0 }
+      }
+    },
+    {
+      "name": "Порт Борд Радель",
+      "cells": {
+        "Сахар": { "price": 50, "available": 0 },
+        "Паприка": { "price": 0, "available": 0 },
+        "Шелк": { "price": 0, "available": 0 },
+        "Манго": { "price": 0, "available": 0 },
+        "Кожа": { "price": 34, "available": 0 },
+        "Орехи": { "price": 0, "available": 0 },
+        "Масло": { "price": 22, "available": 0 },
+        "Пиво": { "price": 0, "available": 0 },
+        "Корица": { "price": 0, "available": 0 },
+        "Ковры": { "price": 0, "available": 0 },
+        "Табак": { "price": 54, "available": 0 },
+        "Перец": { "price": 0, "available": 0 },
+        "Вино": { "price": 0, "available": 0 },
+        "Грог": { "price": 0, "available": 0 },
+        "Шафран": { "price": 0, "available": 0 },
+        "Соль": { "price": 0, "available": 0 },
+        "Финики": { "price": 0, "available": 0 },
+        "Кофе": { "price": 0, "available": 0 },
+        "Ваниль": { "price": 0, "available": 0 },
+        "Ананасы": { "price": 0, "available": 0 }
+      }
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+name: License scan
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  license-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      # Fails the job if any dependency uses a license outside the allowlist
+      # (e.g. GPL/AGPL/LGPL/SSPL). Keep the allowlist in package.json's
+      # `license:check` script in sync with policy.
+      - name: Check licenses against allowlist
+        run: npm run license:check
+
+      # Always publish the full third-party report for auditing / attribution,
+      # even if the check above failed.
+      - name: Generate third-party license report
+        if: always()
+        run: npm run license:report
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: third-party-licenses
+          path: THIRD-PARTY-LICENSES.json
+          if-no-files-found: warn

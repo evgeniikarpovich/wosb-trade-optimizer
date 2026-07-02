@@ -1,0 +1,47 @@
+# Convenience wrappers around the images.
+#
+#   docker compose run --rm test        # run the solver test suite once
+#   docker compose run --rm typecheck   # tsc for core + web
+#   docker compose run --rm demo        # solve example.json in the terminal
+#   docker compose up web               # Vite dev server at http://localhost:5173
+#   docker compose up web-prod          # built static app at http://localhost:8080
+#
+# For the dev-image services, source is bind-mounted and an anonymous volume
+# keeps the image's node_modules from being shadowed by the host.
+
+services:
+  test:
+    build: { context: ., target: dev }
+    image: wosb-trade-optimizer:dev
+    volumes: [".:/app", "/app/node_modules"]
+    command: ["npm", "test"]
+
+  typecheck:
+    image: wosb-trade-optimizer:dev
+    build: { context: ., target: dev }
+    volumes: [".:/app", "/app/node_modules"]
+    command: ["npm", "run", "typecheck"]
+
+  demo:
+    image: wosb-trade-optimizer:dev
+    build: { context: ., target: dev }
+    volumes: [".:/app", "/app/node_modules"]
+    command: ["npm", "run", "demo"]
+
+  license:
+    image: wosb-trade-optimizer:dev
+    build: { context: ., target: dev }
+    volumes: [".:/app", "/app/node_modules"]
+    command: ["npm", "run", "license:check"]
+
+  web:
+    image: wosb-trade-optimizer:dev
+    build: { context: ., target: dev }
+    volumes: [".:/app", "/app/node_modules"]
+    ports: ["5173:5173"]
+    command: ["npm", "run", "dev", "--", "--host", "0.0.0.0"]
+
+  web-prod:
+    build: { context: ., target: web }
+    image: wosb-trade-optimizer:web
+    ports: ["8080:80"]
